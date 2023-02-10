@@ -5,12 +5,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 
-console.log("MONGOURL", process.env.MONGODB_URL);
 @Module({
   imports: [
     ConfigModule.forRoot(),
     UsersModule,
-    MongooseModule.forRoot("mongodb+srv://nodier21:Hillsong21@cluster0.auztufk.mongodb.net/?retryWrites=true&w=majority")
+    MongooseModule.forRoot(process.env.MONGODB_URL)
   ],
   controllers: [AppController],
   providers: [AppService],
