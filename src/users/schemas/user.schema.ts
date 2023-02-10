@@ -15,6 +15,8 @@ export class User {
   phone: number;
   @Prop()
   ext: string;
+  @Prop()
+  signature: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
